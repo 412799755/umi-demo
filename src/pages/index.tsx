@@ -1,10 +1,16 @@
 import React from 'react';
 import styles from './index.less';
-class Square extends React.Component {
+interface IProps {
+  value: Number
+}
+class Square extends React.Component<IProps> {
   render() {
+    const {value} = this.props;
     return (
-      <button className="square">
-        {/* TODO */}
+      <button className="square" onClick={function() {
+        alert('click');
+      }}>
+        {value}
       </button>
     );
   }
@@ -12,7 +18,7 @@ class Square extends React.Component {
 
 class Board extends React.Component {
   renderSquare(i : Number) {
-    return <Square />;
+    return <Square value={i} />;
   }
 
   render() {
