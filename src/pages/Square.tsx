@@ -4,27 +4,39 @@ interface IProps {
   value: Number;
   onClick: () => void;
 }
-interface State {
-  value: String | null;
+// interface State {
+//   value: String | null;
+// }
+{
+  /*export default class Square extends React.Component<IProps, State> {*/
 }
-export default class Square extends React.Component<IProps, State> {
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      value: null,
-    };
-  }
+{
+  /*  constructor(props: any) {*/
+}
+//     super(props);
+//     this.state = {
+//       value: null,
+//     };
+//   }
+//
+//   render() {
+//     return (
+//       <button
+//         className="square"
+//         onClick={() => {
+//           this.props.onClick();
+//         }}
+//       >
+//         {this.props.value}
+//       </button>
+//     );
+//   }
+// }
 
-  render() {
-    return (
-      <button
-        className="square"
-        onClick={() => {
-          this.props.onClick();
-        }}
-      >
-        {this.props.value}
-      </button>
-    );
-  }
+export default function Square(props: IProps) {
+  return (
+    <button className="square" onClick={props.onClick}>
+      {props.value}
+    </button>
+  );
 }
